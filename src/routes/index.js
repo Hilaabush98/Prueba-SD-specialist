@@ -1,10 +1,14 @@
 const express =require('express');
 const router =express.Router();
-//Despliegue de sitios we
+
+//Rutas de despliegue 
 
 router.get('/',(req,res)=>{
 
-res.render('index.html');
+res.json({
+
+    message:'Hello world'
+})
 
 });
 
