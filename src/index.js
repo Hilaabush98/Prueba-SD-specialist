@@ -4,12 +4,12 @@ const app =express();
 const {graphqlHTTP}=require('express-graphql');
 const resolver = require('./resolvers');
 const schema=require('./schema');
-
+const conexion =require('./database');
 
 const path=require ('path');
 
 
-
+conexion();
 //app.set('port',3002);
 
 //settings
@@ -25,13 +25,17 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
-
 //rutas
 app.use(require('./routes/index'));
+
 app.use('/graphql',graphqlHTTP({
 graphiql:true,
 schema:schema,
-rootValue:resolver
+rootValue:resolver,
+    context:{
+        meesageId:'test'
+
+    }
 
 }));
 
