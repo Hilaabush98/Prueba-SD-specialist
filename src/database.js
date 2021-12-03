@@ -1,11 +1,11 @@
 const mongoose =require('mongoose');
-
+ 
 
 
  async function conexion(){
 try {
     
-    await mongoose.connect('mongodb://localhost/CRUD-user',{
+    await mongoose.connect('mongodb://localhost/db-users',{
         useNewUrlParser:true
 
     })

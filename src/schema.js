@@ -21,9 +21,35 @@ input PersonaInput{
     descripcion:String!
     numero:Int
 }
+input EmpleadoInput{
+
+        id_employee:Int!
+        name:String
+        lastname:String
+        email:String
+        nationality:String
+        phone:Int
+        civilstatus:String
+        birthday:String
+        pass:String!
+        user:String!
+}
+type Empleado{
+
+        id_employee:ID
+        name:String
+        lastname:String
+        email:String
+        nationality:String
+        phone:Int
+        civilstatus:String
+        birthday:String
+        pass:String!
+        user:String!
+}
 type Mutation{
-    createuser(input: PersonaInput): persona
-   
+    createPersona(input: PersonaInput): persona
+    RegisterEmployee(input:EmpleadoInput):Empleado
 }
 
 `);
